@@ -156,8 +156,9 @@ const confirmViaWhatsApp = () => {
 
   Mohon konfirmasi jadwal saya. Terima kasih! 🙏`
 
-  const whatsappUrl = `https://wa.me/6285155333056?text=${encodeURIComponent(message)}`
+  const whatsappUrl = `https://wa.me/6283105612985?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
+  // 6285155333056
   
   // Reset form after sending
   confirmForm.name = ''
