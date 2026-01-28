@@ -88,21 +88,21 @@
                   v-model="confirmForm.name"
                   type="text" 
                   placeholder="Nama Anda"
-                  class="w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
-              <div class="flex flex-col gap-2 flex-1">
+              <div class="flex flex-col gap-2 flex-1 min-w-0">
                 <label for="bookingDate" class="text-white/80 text-xs font-bold">Tanggal & Waktu</label>
                 <input 
                   v-model="confirmForm.bookingDate"
                   type="datetime-local"
-                  class="w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full min-w-0 px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
               <button
                 @click="confirmViaWhatsApp"
                 :disabled="!confirmForm.name || !confirmForm.bookingDate"
-                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-3xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Icon name="mdi:whatsapp" class="size-5" />
                 <span class="hidden sm:inline">Konfirmasi</span>
