@@ -1,0 +1,30 @@
+{
+  "name": "lp-master-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/devtools": "3.1.1",
+    "@nuxt/fonts": "0.12.1",
+    "@nuxt/hints": "1.0.0-alpha.4",
+    "@nuxt/icon": "2.1.1",
+    "@nuxt/image": "2.0.0",
+    "@nuxt/ui": "4.3.0",
+    "@nuxtjs/color-mode": "4.0.0",
+    "@nuxtjs/seo": "3.3.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18",
+    "nuxt": "^4.2.2",
+    "typescript": "^5.6.3",
+    "vite": ">=6.0",
+    "vue": "^3.5.25",
+    "vue-router": "^4.6.4",
+    "vue3-carousel-nuxt": "1.1.6"
+  }
+}

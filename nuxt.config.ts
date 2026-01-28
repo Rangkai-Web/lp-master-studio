@@ -1,0 +1,75 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  compatibilityDate: '2024-11-01',
+  devtools: { enabled: true },
+
+  future: {
+    compatibilityVersion: 4
+  },
+
+  modules: [
+    '@nuxt/ui',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    '@nuxtjs/seo',
+    'vue3-carousel-nuxt'
+  ],
+
+  css: ['~/assets/css/main.css'],
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classSuffix: ''
+  },
+
+  fonts: {
+    families: [
+      { name: 'Poppins', weights: [400, 500, 600, 700, 800, 900] },
+      { name: 'Inter', weights: [300, 400, 500, 600, 700] }
+    ]
+  },
+
+  icon: {
+    serverBundle: 'remote'
+  },
+
+  image: {
+    quality: 80,
+    format: ['webp', 'avif', 'jpeg'],
+    screens: {
+      'xs': 320,
+      'sm': 640,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1280,
+      '2xl': 1536
+    }
+  },
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'id',
+        class: 'dark'
+      },
+      title: 'Master Studio - Foto & Video Profesional Cikampek Karawang',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+        { name: 'description', content: 'Studio foto dan video profesional terbaik di Cikampek & Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/img/logo.ico' }
+      ]
+    } as any
+  },
+
+  site: {
+    url: 'https://masterstudio.id',
+    name: 'Master Studio',
+    description: 'Studio foto dan video profesional terbaik di Cikampek & Karawang',
+    defaultLocale: 'id'
+  }
+})

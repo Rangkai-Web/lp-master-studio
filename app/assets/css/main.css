@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #E1242B;
+  --color-secondary: #131415;
+  --color-surface: #35393D;
+  --color-surface-light: #464B4E;
+  --color-neutral-light: #DDDFE1;
+  
+  --font-family-display: 'Poppins', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+}
+
+:root {
+  --primary: #E1242B;
+  --main-bg: #131415;
+  --card-bg: #35393D;
+  --sub-bg: #464B4E;
+  --text-light: #FFFFFF;
+  --text-neutral: #DDDFE1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-body);
+  color: var(--text-neutral);
+  background-color: var(--main-bg);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--main-bg);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--sub-bg);
+  border-radius: 10px;
+}
+
+/* Date input dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
