@@ -71,12 +71,12 @@
           </div>
           
           <!-- Google Calendar Iframe -->
-          <!-- <iframe
+          <iframe
             :src="calendarUrl"
             class="w-full h-[500px] lg:flex-1 lg:min-h-[550px]"
             frameborder="0"
             @load="isLoading = false"
-          /> -->
+          />
           
           <!-- WhatsApp Confirmation Section -->
           <div class="p-5 bg-linear-to-r from-secondary to-primary">
@@ -99,7 +99,7 @@
                   class="w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
-              <button 
+              <button
                 @click="confirmViaWhatsApp"
                 :disabled="!confirmForm.name || !confirmForm.bookingDate"
                 class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
@@ -124,7 +124,7 @@ useSeoMeta({
   ogDescription: 'Reservasi jadwal sesi foto dan video di Master Studio.'
 })
 
-const isLoading = ref(false)
+const isLoading = ref(true)
 const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3DY8gWnejREjq4e4yGAbMZuHK3E1BvBfb51M5Sc-FPtVvifB1VfXc7NtDQW9RTJrDduFC34T-a?gv=true'
 
 const confirmForm = reactive({
