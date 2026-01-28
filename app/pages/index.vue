@@ -16,17 +16,17 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Master Studio - Foto & Video Profesional Cikampek Karawang',
-  description: 'Studio foto dan video profesional terbaik di Cikampek & Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.',
+  title: 'Master Studio - Foto & Video Profesional',
+  description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.',
   ogTitle: 'Master Studio - Foto & Video Profesional',
-  ogDescription: 'Studio foto dan video profesional terbaik di Cikampek & Karawang.',
+  ogDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang.',
   ogImage: 'https://masterstudio.id/og-image.jpg',
   ogUrl: 'https://masterstudio.id',
   ogType: 'website',
   ogSiteName: 'Master Studio',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Master Studio - Foto & Video Profesional',
-  twitterDescription: 'Studio foto dan video profesional terbaik di Cikampek & Karawang.',
+  twitterDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang.',
   twitterImage: 'https://masterstudio.id/og-image.jpg',
   keywords: 'studio foto, studio video, fotografi produk, video cinematic, wisuda, wedding, creative agency',
   author: 'Master Studio',
@@ -56,7 +56,7 @@ useHead({
         '@id': 'https://masterstudio.id',
         name: 'Master Studio',
         alternateName: 'Master Studio',
-        description: 'Studio foto dan video profesional terbaik di Cikampek & Karawang.',
+        description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang.',
         url: 'https://masterstudio.id',
         logo: {
           '@type': 'ImageObject',
@@ -91,7 +91,7 @@ useHead({
         ],
         areaServed: {
           '@type': 'City',
-          name: 'Cikampek & Karawang',
+          name: 'Cikampek, Karawang',
         },
         serviceType: ['Product Photography', 'Beauty Portrait', 'Baby Documentary', 'Event Coverage', 'Photo Retouching'],
         priceRange: '$$',

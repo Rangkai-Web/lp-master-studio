@@ -81,22 +81,29 @@
           <!-- WhatsApp Confirmation Section -->
           <div class="p-5 bg-linear-to-r from-secondary to-primary">
             <p class="text-white font-bold text-sm mb-3 text-center sm:text-left">Sudah pilih jadwal? Isi data berikut untuk konfirmasi:</p>
-            <div class="flex flex-col sm:flex-row gap-3">
-              <input 
-                v-model="confirmForm.name"
-                type="text" 
-                placeholder="Nama Anda"
-                class="flex-1 px-4 py-3 rounded-xl text-sm ring-1 focus:outline-none focus:ring-2 focus:ring-white/50"
-              />
-              <input 
-                v-model="confirmForm.bookingDate"
-                type="datetime-local" 
-                class="flex-1 px-4 py-3 rounded-xl text-sm ring-1 focus:outline-none focus:ring-2 focus:ring-white/50"
-              />
+            <div class="flex flex-col sm:flex-row gap-3 items-baseline">
+              <div class="flex flex-col gap-2">
+                <label for="name" class="text-white/80 text-xs font-bold">Nama</label>
+                <input 
+                  v-model="confirmForm.name"
+                  type="text" 
+                  placeholder="Nama Anda"
+                  class="flex-1 w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="bookingDate" class="text-white/80 text-xs font-bold">Tanggal & Waktu</label>
+                <input 
+                  v-model="confirmForm.bookingDate"
+                  type="datetime-local"
+                  class="flex-1 w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                />
+              </div>
+
               <button 
                 @click="confirmViaWhatsApp"
                 :disabled="!confirmForm.name || !confirmForm.bookingDate"
-                class="flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                class="flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 mt-5.5 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Icon name="mdi:whatsapp" class="size-5" />
                 <span class="hidden sm:inline">Konfirmasi</span>
@@ -113,7 +120,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Reservasi - Master Studio',
-  description: 'Reservasi jadwal sesi foto dan video di Master Studio Cikampek & Karawang.',
+  description: 'Reservasi jadwal sesi foto dan video di Master Studio.',
   ogTitle: 'Reservasi - Master Studio',
   ogDescription: 'Reservasi jadwal sesi foto dan video di Master Studio.'
 })
@@ -142,13 +149,13 @@ const confirmViaWhatsApp = () => {
 
   const message = `Halo Master Studio! 👋
 
-Saya sudah melakukan booking melalui Google Calendar.
+  Saya sudah melakukan booking melalui Google Calendar.
 
-📋 *Detail Booking:*
-• Nama: ${confirmForm.name}
-• Jadwal: ${formatDate(confirmForm.bookingDate)}
+  📋 *Detail Booking:*
+  • Nama: ${confirmForm.name}
+  • Jadwal: ${formatDate(confirmForm.bookingDate)}
 
-Mohon konfirmasi jadwal saya. Terima kasih! 🙏`
+  Mohon konfirmasi jadwal saya. Terima kasih! 🙏`
 
   const whatsappUrl = `https://wa.me/6285155333056?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')

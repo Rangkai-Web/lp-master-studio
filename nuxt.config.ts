@@ -54,11 +54,11 @@ export default defineNuxtConfig({
         lang: 'id',
         class: 'dark'
       },
-      title: 'Master Studio - Foto & Video Profesional Cikampek Karawang',
+      title: 'Master Studio - Foto & Video Profesional',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-        { name: 'description', content: 'Studio foto dan video profesional terbaik di Cikampek & Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.' }
+        { name: 'description', content: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/img/logo.ico' }
@@ -69,7 +69,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://masterstudio.id',
     name: 'Master Studio',
-    description: 'Studio foto dan video profesional terbaik di Cikampek & Karawang',
+    description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang',
     defaultLocale: 'id'
   }
 })

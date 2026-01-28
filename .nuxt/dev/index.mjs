@@ -1056,7 +1056,7 @@ const _inlineRuntimeConfig = {
         "_context": "nuxt-site-config:config",
         "url": "https://masterstudio.id",
         "name": "Master Studio",
-        "description": "Studio foto dan video profesional terbaik di Cikampek & Karawang",
+        "description": "Studio foto dan video profesional terbaik di Cikampek, Karawang",
         "defaultLocale": "id"
       }
     ],
@@ -3849,7 +3849,7 @@ const _Oj44TCYgrLC3YqkAJ082CSBjXfN3AXIrM1RVtqlCIoI = defineNitroPlugin(async (ni
 
 const rootDir = "/Users/adiprimanto/Developer/Rangkai Web/Alex - Master Studio/lp-master-studio";
 
-const appHead = {"link":[{"rel":"icon","type":"image/x-icon","href":"/img/logo.ico"}],"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1.0"},{"name":"description","content":"Studio foto dan video profesional terbaik di Cikampek & Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya."},{"property":"og:type","content":"website"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"id","class":"dark"},"title":"Master Studio - Foto & Video Profesional Cikampek Karawang"};
+const appHead = {"link":[{"rel":"icon","type":"image/x-icon","href":"/img/logo.ico"}],"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1.0"},{"name":"description","content":"Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya."},{"property":"og:type","content":"website"}],"style":[],"script":[],"noscript":[],"htmlAttrs":{"lang":"id","class":"dark"},"title":"Master Studio - Foto & Video Profesional"};
 
 const appRootTag = "div";
 
