@@ -71,43 +71,42 @@
           </div>
           
           <!-- Google Calendar Iframe -->
-          <iframe 
+          <!-- <iframe
             :src="calendarUrl"
             class="w-full h-[500px] lg:flex-1 lg:min-h-[550px]"
             frameborder="0"
             @load="isLoading = false"
-          />
+          /> -->
           
           <!-- WhatsApp Confirmation Section -->
           <div class="p-5 bg-linear-to-r from-secondary to-primary">
             <p class="text-white font-bold text-sm mb-3 text-center sm:text-left">Sudah pilih jadwal? Isi data berikut untuk konfirmasi:</p>
-            <div class="flex flex-col sm:flex-row gap-3 items-baseline">
-              <div class="flex flex-col gap-2">
+            <div class="flex flex-col sm:flex-row gap-3 sm:items-end">
+              <div class="flex flex-col gap-2 flex-1">
                 <label for="name" class="text-white/80 text-xs font-bold">Nama</label>
                 <input 
                   v-model="confirmForm.name"
                   type="text" 
                   placeholder="Nama Anda"
-                  class="flex-1 w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-2 flex-1">
                 <label for="bookingDate" class="text-white/80 text-xs font-bold">Tanggal & Waktu</label>
                 <input 
                   v-model="confirmForm.bookingDate"
                   type="datetime-local"
-                  class="flex-1 w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full px-4 py-3 rounded-xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
-
               <button 
                 @click="confirmViaWhatsApp"
                 :disabled="!confirmForm.name || !confirmForm.bookingDate"
-                class="flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 mt-5.5 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Icon name="mdi:whatsapp" class="size-5" />
                 <span class="hidden sm:inline">Konfirmasi</span>
-                <span class="sm:hidden">Kirim</span>
+                <span class="sm:hidden">Kirim via WhatsApp</span>
               </button>
             </div>
           </div>
@@ -125,7 +124,7 @@ useSeoMeta({
   ogDescription: 'Reservasi jadwal sesi foto dan video di Master Studio.'
 })
 
-const isLoading = ref(true)
+const isLoading = ref(false)
 const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3DY8gWnejREjq4e4yGAbMZuHK3E1BvBfb51M5Sc-FPtVvifB1VfXc7NtDQW9RTJrDduFC34T-a?gv=true'
 
 const confirmForm = reactive({
