@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 lg:px-20 py-24 bg-secondary">
+  <section class="px-4 lg:px-20 py-24 bg-secondary mt-8">
     <div class="max-w-6xl mx-auto">
       <div class="bg-surface rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-white/5">
         <!-- Left Side - Info Panel -->
@@ -93,11 +93,25 @@
               </div>
               <div class="flex flex-col gap-2 flex-1 min-w-0">
                 <label for="bookingDate" class="text-white/80 text-xs font-bold">Tanggal & Waktu</label>
-                <input 
-                  v-model="confirmForm.bookingDate"
-                  type="datetime-local"
-                  class="w-full min-w-0 px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
+                <ClientOnly>
+                  <VueDatePicker
+                    v-model="confirmForm.bookingDate"
+                    :enable-time-picker="true"
+                    :min-date="new Date()"
+                    locale="id"
+                    format="dd MMMM yyyy, HH:mm"
+                    placeholder="Pilih tanggal & waktu"
+                    auto-apply
+                    :input-class-name="'datepicker-input'"
+                    :dark="false"
+                  />
+                  <template #fallback>
+                    <input 
+                      type="datetime-local"
+                      class="w-full min-w-0 px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200"
+                    />
+                  </template>
+                </ClientOnly>
               </div>
               <button
                 @click="confirmViaWhatsApp"
@@ -129,13 +143,14 @@ const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules
 
 const confirmForm = reactive({
   name: '',
-  bookingDate: ''
+  bookingDate: null as Date | null
 })
 
 const confirmViaWhatsApp = () => {
   // Format the date nicely
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr)
+  const formatDate = (dateValue: Date | string | null) => {
+    if (!dateValue) return '-'
+    const date = dateValue instanceof Date ? dateValue : new Date(dateValue)
     return date.toLocaleDateString('id-ID', {
       weekday: 'long',
       day: 'numeric',
@@ -162,6 +177,31 @@ const confirmViaWhatsApp = () => {
   
   // Reset form after sending
   confirmForm.name = ''
-  confirmForm.bookingDate = ''
+  confirmForm.bookingDate = null
 }
 </script>
+
+<style>
+.datepicker-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.875rem;
+  background-color: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+}
+
+.datepicker-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.dp__theme_light {
+  --dp-background-color: #ffffff;
+  --dp-text-color: #1f2937;
+  --dp-primary-color: #dc2626;
+  --dp-primary-text-color: #ffffff;
+  --dp-border-radius: 1rem;
+}
+</style>
