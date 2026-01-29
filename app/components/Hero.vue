@@ -44,7 +44,7 @@
 .hero-bg {
   background-image: 
     linear-gradient(to right, rgba(19, 20, 21, 0.95) 0%, rgba(19, 20, 21, 0.6) 60%, rgba(19, 20, 21, 0.4) 100%), 
-    url('/img/hero/studio1.jpg');
+    url('/img/hero/studio1.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

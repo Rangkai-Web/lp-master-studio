@@ -41,15 +41,15 @@
 <script setup lang="ts">
 const testimonials = [
   {
-    img: '/img/testimoni/testimoni1.jpg',
+    img: '/img/testimoni/testimoni1.webp',
     name: 'Kak Ketty',
   },
   {
-    img: '/img/testimoni/testimoni2.jpg',
+    img: '/img/testimoni/testimoni2.webp',
     name: 'Kak Tia',
   },
   {
-    img: '/img/testimoni/testimoni3.jpg',
+    img: '/img/testimoni/testimoni3.webp',
     name: 'Diah Qudsiyah',
   },
 ]

@@ -88,7 +88,7 @@
                   v-model="confirmForm.name"
                   type="text" 
                   placeholder="Nama Anda"
-                  class="w-full px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full px-4 py-2.5 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
               <div class="flex flex-col gap-2 flex-1 min-w-0">
@@ -98,9 +98,9 @@
                     v-model="confirmForm.bookingDate"
                     :enable-time-picker="true"
                     :min-date="new Date()"
-                    locale="id"
+                    :format-locale="idLocale"
                     format="dd MMMM yyyy, HH:mm"
-                    placeholder="Pilih tanggal & waktu"
+                    placeholder="Pilih Tanggal & Waktu"
                     auto-apply
                     :input-class-name="'datepicker-input'"
                     :dark="false"
@@ -108,7 +108,7 @@
                   <template #fallback>
                     <input 
                       type="datetime-local"
-                      class="w-full min-w-0 px-4 py-3 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200"
+                      class="w-full min-w-0 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200"
                     />
                   </template>
                 </ClientOnly>
@@ -116,7 +116,7 @@
               <button
                 @click="confirmViaWhatsApp"
                 :disabled="!confirmForm.name || !confirmForm.bookingDate"
-                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-3xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-2.5 rounded-3xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
                 <Icon name="mdi:whatsapp" class="size-5" />
                 <span class="hidden sm:inline">Konfirmasi</span>
@@ -131,6 +131,8 @@
 </template>
 
 <script setup lang="ts">
+import { id as idLocale } from 'date-fns/locale'
+
 useSeoMeta({
   title: 'Reservasi - Master Studio',
   description: 'Reservasi jadwal sesi foto dan video di Master Studio.',
@@ -203,5 +205,10 @@ const confirmViaWhatsApp = () => {
   --dp-primary-color: #dc2626;
   --dp-primary-text-color: #ffffff;
   --dp-border-radius: 1rem;
+}
+
+.dp__input {
+  padding: 0.45rem 2rem;
+  border-radius: 1.5rem;
 }
 </style>

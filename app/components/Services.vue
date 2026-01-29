@@ -107,7 +107,7 @@
               <!-- Image -->
                <div class="flex gap-4 mt-6">
                  <NuxtImg
-                   src="/img/hero/studio2.jpg"
+                   src="/img/hero/studio2.webp"
                    alt="Studio Photography"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -116,7 +116,7 @@
                    :height="200"
                  />
                  <NuxtImg
-                   src="/img/services/drone.jpg"
+                   src="/img/services/drone.webp"
                    alt="Drone Photography"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -161,7 +161,7 @@
               <!-- Image -->
                <div class="flex gap-4 mt-6">
                  <NuxtImg
-                   src="/img/services/photo-booth1.jpg"
+                   src="/img/services/photo-booth1.webp"
                    alt="Photo Booth Service"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -170,7 +170,7 @@
                    :height="200"
                  />
                  <NuxtImg
-                   src="/img/services/photo-booth2.jpg"
+                   src="/img/services/photo-booth2.webp"
                    alt="360 Video Booth"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -216,7 +216,7 @@
               <!-- Image -->
                <div class="flex gap-4 mt-6">
                  <NuxtImg
-                   src="/img/services/photo-collage1.jpg"
+                   src="/img/services/photo-collage1.webp"
                    alt="Wedding Album Design"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -225,7 +225,7 @@
                    :height="200"
                  />
                  <NuxtImg
-                   src="/img/services/photo-collage2.jpg"
+                   src="/img/services/photo-collage2.webp"
                    alt="Premium Photo Printing"
                    class="w-1/2 h-[200px] rounded-2xl object-cover"
                    loading="lazy"
@@ -249,19 +249,19 @@ const mainServices = [
   {
     id: 'master-studio',
     title: 'Master Studio',
-    image: '/img/services/camera.jpg',
+    image: '/img/services/camera.webp',
     overlayClass: 'bg-gradient-to-t from-black/90 via-black/40 to-black/20'
   },
   {
     id: 'gallery-booth',
     title: 'Gallery Booth',
-    image: '/img/services/photo-booth.jpg',
+    image: '/img/services/photo-booth.webp',
     overlayClass: 'bg-gradient-to-t from-black/90 via-black/40 to-transparent'
   },
   {
     id: 'photo-collage',
     title: 'Photo Collage',
-    image: '/img/services/photo-collage.jpg',
+    image: '/img/services/photo-collage.webp',
     overlayClass: 'bg-gradient-to-t from-[#F59E0B]/80 via-[#F59E0B]/30 to-transparent'
   }
 ]

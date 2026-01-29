@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 lg:px-20 py-24 bg-secondary" id="faq">
+  <section class="px-4 lg:px-20 py-24 faq-bg" id="faq">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-white text-4xl font-black mb-4 uppercase font-display">Frequently Asked Questions</h2>
@@ -79,5 +79,12 @@ const toggleFaq = (index: number) => {
 </script>
 
 <style scoped>
-
+.faq-bg {
+  background-image: 
+    linear-gradient(to right, rgba(19, 20, 21, 0.95) 0%, rgba(19, 20, 21, 0.6) 60%, rgba(19, 20, 21, 0.4) 100%), 
+    url('/img/others/camera3.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 </style>

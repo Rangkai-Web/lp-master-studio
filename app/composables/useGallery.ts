@@ -6,17 +6,17 @@ export interface GalleryItem {
 }
 
 export const galleryItems: GalleryItem[] = [
-  { id: 1, cat: 'wedding', img: '/img/gallery/wedding1.jpg', class: 'tall' },
-  { id: 2, cat: 'wedding', img: '/img/gallery/wedding2.jpg', class: '' },
-  { id: 3, cat: 'wedding', img: '/img/gallery/wedding3.jpg', class: 'wide' },
-  { id: 4, cat: 'wedding', img: '/img/gallery/wedding4.jpg', class: 'tall' },
-  { id: 5, cat: 'wedding', img: '/img/gallery/wedding5.jpg', class: 'wide' },
-  { id: 10, cat: 'company', img: '/img/gallery/company1.jpg', class: '' },
-  { id: 21, cat: 'graduation', img: '/img/gallery/graduation1.jpg', class: '' },
-  { id: 22, cat: 'graduation', img: '/img/gallery/graduation2.jpg', class: 'wide' },
-  { id: 33, cat: 'event', img: '/img/gallery/event1.jpg', class: 'wide' },
-  { id: 35, cat: 'event', img: '/img/gallery/event2.jpg', class: 'tall' },
-  { id: 36, cat: 'family', img: '/img/gallery/family1.jpg', class: 'tall' },
+  { id: 1, cat: 'wedding', img: '/img/gallery/wedding1.webp', class: 'tall' },
+  { id: 2, cat: 'wedding', img: '/img/gallery/wedding2.webp', class: '' },
+  { id: 3, cat: 'wedding', img: '/img/gallery/wedding3.webp', class: 'wide' },
+  { id: 4, cat: 'wedding', img: '/img/gallery/wedding4.webp', class: 'tall' },
+  { id: 5, cat: 'wedding', img: '/img/gallery/wedding5.webp', class: 'wide' },
+  { id: 10, cat: 'company', img: '/img/gallery/company1.webp', class: '' },
+  { id: 21, cat: 'graduation', img: '/img/gallery/graduation1.webp', class: '' },
+  { id: 22, cat: 'graduation', img: '/img/gallery/graduation2.webp', class: 'wide' },
+  { id: 33, cat: 'event', img: '/img/gallery/event1.webp', class: 'wide' },
+  { id: 35, cat: 'event', img: '/img/gallery/event2.webp', class: 'tall' },
+  { id: 36, cat: 'family', img: '/img/gallery/family1.webp', class: 'tall' },
 ]
 
 const ITEMS_PER_PAGE = 8
