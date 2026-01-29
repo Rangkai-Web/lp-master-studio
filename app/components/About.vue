@@ -65,7 +65,22 @@
             </div>
           </div>
 
-          <!-- Card 3: Posisi Unik -->
+          <!-- Card 3: Misi -->
+          <div class="feature-card group">
+            <div class="flex items-start gap-5">
+              <div class="shrink-0 size-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Icon name="material-symbols:target" class="text-3xl text-primary" />
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-xl font-bold text-white">Misi Kami</h3>
+                <p class="text-neutral-light leading-relaxed">
+                  Kami menegaskan komitmen kami untuk tidak sekadar menjadi vendor, tapi partner yang dipercaya, dengan fokus pada keautentikan dan keabadian kenangan Moment Berharga Anda.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Posisi Unik -->
           <div class="feature-card group">
             <div class="flex items-start gap-5">
               <div class="flex-shrink-0 size-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
