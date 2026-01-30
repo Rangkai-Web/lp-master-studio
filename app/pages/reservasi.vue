@@ -134,10 +134,19 @@
 import { id as idLocale } from 'date-fns/locale'
 
 useSeoMeta({
-  title: 'Reservasi - Master Studio',
-  description: 'Reservasi jadwal sesi foto dan video di Master Studio.',
-  ogTitle: 'Reservasi - Master Studio',
-  ogDescription: 'Reservasi jadwal sesi foto dan video di Master Studio.'
+  title: 'Reservasi Online - Master Studio Cikampek Karawang',
+  description: 'Booking jadwal sesi foto dan video di Master Studio. Reservasi online mudah dan cepat untuk fotografi wedding, wisuda, family portrait, dan event.',
+  ogTitle: 'Reservasi Online - Master Studio Cikampek Karawang',
+  ogDescription: 'Booking jadwal sesi foto dan video di Master Studio. Reservasi online mudah dan cepat.',
+  ogImage: 'https://masterstudio.id/img/og-image.webp',
+  ogUrl: 'https://masterstudio.id/reservasi',
+  robots: 'index, follow',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://masterstudio.id/reservasi' }
+  ]
 })
 
 const isLoading = ref(true)

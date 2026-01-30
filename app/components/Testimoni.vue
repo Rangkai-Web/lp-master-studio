@@ -21,10 +21,13 @@
           <div class="testimonial-card">
             <NuxtImg
               :src="testimonial.img"
-              :alt="testimonial.name"
+              :alt="`Testimonial dari ${testimonial.name} - Master Studio`"
               class="w-full max-w-md h-auto object-contain rounded-md"
               draggable="false"
               loading="lazy"
+              format="webp"
+              quality="75"
+              sizes="(max-width: 1024px) 100vw, 33vw"
             />
           </div>
         </Slide>

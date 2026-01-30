@@ -18,11 +18,15 @@
         class="relative overflow-hidden cursor-pointer group"
         @click="openModal(service.id)"
       >
-        <!-- Background Image -->
-        <div 
-          class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          :style="{ backgroundImage: `url('${service.image}')` }"
-        ></div>
+        <!-- Background Image with NuxtImg -->
+        <NuxtImg 
+          :src="service.image"
+          :alt="service.title"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+          format="webp"
+          quality="75"
+        />
         
         <!-- Overlay Gradient -->
         <div 

@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 lg:px-20 py-24 faq-bg" id="faq">
+  <section class="faq-bg px-4 lg:px-20 py-24" id="faq">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-16">
         <h2 class="text-white text-4xl font-black mb-4 uppercase font-display">Frequently Asked Questions</h2>

@@ -29,7 +29,6 @@
 
       <!-- Gallery Grid -->
       <div class="portfolio-grid">
-        <!-- :class="['portfolio-item', item.class, 'fade-in']" -->
         <div 
           v-for="(item, index) in paginatedItems" 
           :key="item.id"
@@ -39,9 +38,11 @@
         >
           <NuxtImg 
             :src="item.img" 
-            :alt="`Gallery item ${item.id}`"
+            :alt="`Foto ${item.cat} - Master Studio Gallery ${item.id}`"
             loading="lazy"
             format="webp"
+            quality="75"
+            sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             class="portfolio-image"
           />
           <div class="portfolio-overlay">

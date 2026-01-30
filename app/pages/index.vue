@@ -2,38 +2,37 @@
   <div>
     <Hero />
     <About />
-    <Services />
-    <WorkFlow />
-    <!-- <Features /> -->
-    <Pricing />
-    <Gallery />
-    <WhyUs />
-    <Testimoni />
-    <Location />
-    <FAQ />
+    <LazyServices />
+    <LazyWorkFlow />
+    <LazyPricing />
+    <LazyGallery />
+    <LazyWhyUs />
+    <LazyTestimoni />
+    <LazyLocation />
+    <LazyFAQ />
   </div>
 </template>
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Master Studio - Foto & Video Profesional',
-  description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, dan creative agency terpercaya.',
-  ogTitle: 'Master Studio - Foto & Video Profesional',
-  ogDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang.',
-  ogImage: 'https://masterstudio.id/og-image.webp',
+  title: 'Master Studio - Studio Foto & Video Profesional Cikampek Karawang',
+  description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, prewedding, dan creative agency terpercaya sejak 2011.',
+  ogTitle: 'Master Studio - Studio Foto & Video Profesional Cikampek Karawang',
+  ogDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, prewedding, dan creative agency.',
+  ogImage: 'https://masterstudio.id/img/og-image.webp',
   ogUrl: 'https://masterstudio.id',
   ogType: 'website',
   ogSiteName: 'Master Studio',
+  ogLocale: 'id_ID',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'Master Studio - Foto & Video Profesional',
-  twitterDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang.',
-  twitterImage: 'https://masterstudio.id/og-image.webp',
-  keywords: 'studio foto, studio video, fotografi produk, video cinematic, wisuda, wedding, creative agency',
+  twitterTitle: 'Master Studio - Studio Foto & Video Profesional',
+  twitterDescription: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan lengkap untuk wedding, wisuda, dan event.',
+  twitterImage: 'https://masterstudio.id/img/og-image.webp',
+  twitterSite: '@masterstudioidn',
+  twitterCreator: '@masterstudioidn',
+  keywords: 'studio foto cikampek, studio foto karawang, jasa foto wedding, foto wisuda, video cinematic, prewedding, fotografi produk, master studio, foto keluarga, photo booth',
   author: 'Master Studio',
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
   themeColor: '#E1242B',
 })
 

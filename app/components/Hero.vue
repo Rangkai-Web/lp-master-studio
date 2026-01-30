@@ -1,7 +1,7 @@
 <template>
   <section class="px-4 lg:px-20 py-8 lg:py-12 mt-20">
-    <div class="hero-bg flex min-h-[620px] flex-col gap-6 rounded-[2.5rem] items-start justify-center px-8 lg:px-24 relative overflow-hidden">
-      <div class="flex flex-col gap-6 max-w-[750px]">
+    <div class="hero-bg relative flex min-h-[620px] flex-col gap-6 rounded-[2.5rem] items-start justify-center px-8 lg:px-24 overflow-hidden">
+      <div class="relative z-10 flex flex-col gap-6 max-w-[750px]">
         <h1 class="text-white text-4xl lg:text-7xl font-black leading-[1.1] tracking-tight font-display">
           Foto Studio & Video <br /><span class="text-primary italic">Profesional</span>
         </h1>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-wrap gap-5 mt-4">
+      <div class="relative z-10 flex flex-wrap gap-5 mt-4">
         <NuxtLink 
           to="/reservasi"
           class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-8 bg-primary text-white text-lg font-black shadow-xl shadow-primary/30 hover:bg-primary/90 hover:scale-110 transition-all duration-300 uppercase"
@@ -38,6 +38,18 @@
 </template>
 
 <script setup lang="ts">
+// Preload hero image for faster LCP
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/img/hero/studio1.webp',
+      type: 'image/webp',
+      fetchpriority: 'high'
+    }
+  ]
+})
 </script>
 
 <style scoped>

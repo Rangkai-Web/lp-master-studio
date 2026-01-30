@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://masterstudio.com/sitemap.xml
+# Sitemap
+Sitemap: https://masterstudio.id/sitemap.xml
