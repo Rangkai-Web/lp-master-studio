@@ -70,18 +70,21 @@
             <p class="text-gray-500 text-sm">Memuat kalender...</p>
           </div>
           
-          <!-- Google Calendar Iframe -->
+          <!-- Google Calendar Appointment Scheduling begin -->
           <iframe
-            :src="calendarUrl"
-            class="w-full h-[500px] lg:flex-1 lg:min-h-[550px]"
+            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2VD4wMfbp3vD2dCm2PABg14ucMOEnMAmUVICPMrF9GJ2YeBmsN2tyvqCVdorvhNHwJxJPwQVwT?gv=true"
+            style="border: 0"
+            width="100%"
+            height="600"
             frameborder="0"
             @load="isLoading = false"
-          />
+          ></iframe>
+          <!-- end Google Calendar Appointment Scheduling -->
           
           <!-- WhatsApp Confirmation Section -->
           <div class="p-5 bg-linear-to-r from-secondary to-primary">
             <p class="text-white font-bold text-sm mb-3 text-center sm:text-left">Sudah pilih jadwal? Isi data berikut untuk konfirmasi:</p>
-            <div class="flex flex-col sm:flex-row gap-3 sm:items-end">
+            <div class="flex flex-col sm:flex-row gap-3 sm:items-end mb-4">
               <div class="flex flex-col gap-2 flex-1">
                 <label for="name" class="text-white/80 text-xs font-bold">Nama</label>
                 <input 
@@ -113,16 +116,29 @@
                   </template>
                 </ClientOnly>
               </div>
-              <button
-                @click="confirmViaWhatsApp"
-                :disabled="!confirmForm.name || !confirmForm.bookingDate"
-                class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-2.5 rounded-3xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              >
-                <Icon name="mdi:whatsapp" class="size-5" />
-                <span class="hidden sm:inline">Konfirmasi</span>
-                <span class="sm:hidden">Kirim via WhatsApp</span>
-              </button>
+              <div class="flex flex-col gap-2 flex-1">
+                <label for="bookingDate" class="text-white/80 text-xs font-bold">Pilih Paket</label>
+                <select 
+                  v-model="confirmForm.package"
+                  class="w-full px-4 py-2.5 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                >
+                  <option value="">Pilih Paket</option>
+                  <option value="gabooth-aja">Gabooth Aja</option>
+                  <option value="gabooth-banget">Gabooth Banget</option>
+                  <option value="gabooth-parah">Gabooth Parah</option>
+                </select>
+              </div>
             </div>
+
+            <button
+              @click="confirmViaWhatsApp"
+              :disabled="!confirmForm.name || !confirmForm.bookingDate"
+              class="w-full flex items-center justify-center gap-2 bg-white text-green-600 px-6 py-3 rounded-3xl font-bold text-sm hover:bg-green-50 transition-all hover:scale-105 cursor-pointer shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            >
+              <Icon name="mdi:whatsapp" class="size-5" />
+              <span class="hidden sm:inline">Konfirmasi</span>
+              <span class="sm:hidden">Kirim via WhatsApp</span>
+            </button>
           </div>
         </div>
       </div>
@@ -132,6 +148,9 @@
 
 <script setup lang="ts">
 import { id as idLocale } from 'date-fns/locale'
+
+const route = useRoute()
+const packagePhoto = route.query.package as string
 
 useSeoMeta({
   title: 'Reservasi Online - Master Studio Cikampek Karawang',
@@ -154,7 +173,14 @@ const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules
 
 const confirmForm = reactive({
   name: '',
-  bookingDate: null as Date | null
+  bookingDate: null as Date | null,
+  package: ''
+})
+
+onMounted(() => {
+  if (packagePhoto) {
+    confirmForm.package = packagePhoto == 'Gabooth Aja' ? 'gabooth-aja' : packagePhoto == 'Gabooth Banget' ? 'gabooth-banget' : 'gabooth-parah'
+  }
 })
 
 const confirmViaWhatsApp = () => {
@@ -178,17 +204,18 @@ const confirmViaWhatsApp = () => {
 
   📋 *Detail Booking:*
   • Nama: ${confirmForm.name}
+  • Paket: ${confirmForm.package}
   • Jadwal: ${formatDate(confirmForm.bookingDate)}
 
   Mohon konfirmasi jadwal saya. Terima kasih! 🙏`
 
-  const whatsappUrl = `https://wa.me/6283105612985?text=${encodeURIComponent(message)}`
+  const whatsappUrl = `https://wa.me/6285155333056?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, '_blank')
-  // 6285155333056
   
   // Reset form after sending
   confirmForm.name = ''
   confirmForm.bookingDate = null
+  confirmForm.package = ''
 }
 </script>
 

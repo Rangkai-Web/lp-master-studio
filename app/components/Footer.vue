@@ -60,7 +60,7 @@
           </li>
           <li class="flex items-center gap-4">
             <Icon name="material-symbols:mail" class="text-primary" />
-            <span class="flex-1">fiqrifakhrudin@gmail.com</span>
+            <span class="flex-1">masterstudio.idn@gmail.com</span>
           </li>
           <li class="flex items-center gap-4">
             <Icon name="material-symbols:location-on" class="text-primary" />
@@ -91,11 +91,9 @@ const socials = [
 ]
 
 const services = [
-  { label: 'Fotografi Profesional' },
-  { label: 'Videografi Cinematic' },
-  { label: 'Drone Photography' },
+  { label: 'Master Studio' },
   { label: 'Gallery Booth' },
-  { label: 'Event Photography' },
+  { label: 'Portrait Collage' },
 ]
 
 const quickLinks = [

@@ -93,11 +93,12 @@
 
               <!-- Description -->
               <p class="text-neutral-light text-sm lg:text-base leading-relaxed mb-6">
-                Brand inti yang berperan sebagai "director" dan "heart" dari setiap proyek. Kami adalah wajah pertama yang klien temui dan penjaga kualitas akhir setiap karya.
+                Tim profesional untuk kebutuhan foto dan video Anda. Mulai dari sesi foto studio, dokumentasi acara, hingga pengambilan video sinematik — kami siap mengabadikan momen penting Anda dengan kualitas terbaik.
               </p>
 
               <!-- Services Tags -->
               <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-white text-xs font-medium">Photo Studio</span>
                 <span class="px-3 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-white text-xs font-medium">Fotografi Profesional</span>
                 <span class="px-3 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-white text-xs font-medium">Videografi Cinematic</span>
                 <span class="px-3 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-white text-xs font-medium">Drone Photography</span>
@@ -147,7 +148,7 @@
 
               <!-- Description -->
               <p class="text-neutral-light text-sm lg:text-base leading-relaxed mb-6">
-                Spesialis dalam menciptakan "wow factor" dan engagement selama acara berlangsung. Kami menghubungkan brand dengan audiens melalui pengalaman interaktif yang memorable.
+                Spesialis penyedia layanan Photo Booth dan 360° Video Booth untuk berbagai acara. Hadirkan pengalaman dokumentasi interaktif yang seru dan memorable bagi tamu Anda dengan hasil foto dan video berkualitas tinggi yang dapat langsung dibagikan.
               </p>
 
               <!-- Services Tags -->
@@ -159,7 +160,7 @@
 
               <!-- Use Cases -->
               <p class="text-neutral-light/70 text-xs italic">
-                Cocok untuk: Corporate Event, Wedding, Exhibition, Product Launch
+                Cocok untuk: Corporate Event, Wedding, Exhibition, Product Launch, Birthday Party, Graduation
               </p>
 
               <!-- Image -->
@@ -190,7 +191,7 @@
               <!-- Header -->
               <div class="flex items-center gap-3 mb-6">
                 <h3 class="text-xl lg:text-2xl font-black font-display">
-                  <span class="text-white">Photo Collage</span>
+                  <span class="text-white">Portrait Collage</span>
                   <span class="inline-flex items-center ml-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-[#EC4899]"></span>
                     <span class="w-2.5 h-2.5 rounded-full bg-[#3B82F6] ml-0.5"></span>
@@ -202,14 +203,16 @@
 
               <!-- Description -->
               <p class="text-neutral-light text-sm lg:text-base leading-relaxed mb-6">
-                Ahli dalam mentransformasi momen digital menjadi physical heirlooms yang bernilai sentimental tinggi. Kami adalah "penjaga kenangan" yang memastikan cerita klien terabadikan dalam bentuk fisik terbaik.
+                Layanan cetak foto dan album premium untuk mengabadikan momen spesial Anda. Dari foto self-portrait, album pernikahan, hingga buku tahunan sekolah — kami wujudkan kenangan digital menjadi cetakan berkualitas tinggi yang bisa Anda simpan selamanya.
               </p>
 
               <!-- Services Tags -->
               <div class="flex flex-wrap gap-2 mb-6">
-                <span class="px-3 py-1.5 bg-[#EAB308]/20 border border-[#EAB308]/40 rounded-full text-white text-xs font-medium">Wedding Album</span>
-                <span class="px-3 py-1.5 bg-[#3B82F6]/20 border border-[#3B82F6]/40 rounded-full text-white text-xs font-medium">Yearbook Design</span>
-                <span class="px-3 py-1.5 bg-[#EC4899]/20 border border-[#EC4899]/40 rounded-full text-white text-xs font-medium">Premium Printing</span>
+                <span class="px-3 py-1.5 bg-[#EC4899]/20 border border-[#EC4899]/40 rounded-full text-white text-xs font-medium">Self Photo</span>
+                <span class="px-3 py-1.5 bg-[#EAB308]/20 border border-[#EAB308]/40 rounded-full text-white text-xs font-medium">Photo Box</span>
+                <span class="px-3 py-1.5 bg-[#3B82F6]/20 border border-[#3B82F6]/40 rounded-full text-white text-xs font-medium">Wedding Album</span>
+                <span class="px-3 py-1.5 bg-[#14B8A6]/20 border border-[#14B8A6]/40 rounded-full text-white text-xs font-medium">Yearbook Design</span>
+                <span class="px-3 py-1.5 bg-[#9333EA]/20 border border-[#9333EA]/40 rounded-full text-white text-xs font-medium">Premium Printing</span>
               </div>
 
               <!-- Use Cases -->
