@@ -97,10 +97,10 @@ const services = [
 ]
 
 const quickLinks = [
-  { href: '/#beranda', label: 'Beranda' },
+  { href: '/', label: 'Beranda' },
   { href: '/#layanan', label: 'Layanan Foto & Video' },
   { href: '/#paket', label: 'Pilihan Paket Harga' },
-  { href: '/#galeri', label: 'Portfolio Terbaru' },
+  { href: '/#portofolio', label: 'Portfolio Terbaru' },
   { href: '/#faq', label: 'Tanya Jawab (FAQ)' }
 ]
 </script>

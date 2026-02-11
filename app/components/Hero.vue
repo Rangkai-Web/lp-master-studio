@@ -27,7 +27,7 @@
           Reservasi Jadwal
         </NuxtLink>
         <NuxtLink 
-          to="/#galeri"
+          to="/#portofolio"
           class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-8 bg-transparent text-primary text-lg font-black hover:bg-primary/10 hover:scale-110 transition-all duration-300 uppercase border border-primary"
         >
           Lihat Portofolio
