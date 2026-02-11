@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 lg:px-20 py-8 lg:py-12 mt-20">
+  <section class="px-4 lg:px-20 py-8 lg:py-12 mt-20" id="hero">
     <div class="hero-bg relative flex min-h-[620px] flex-col gap-6 rounded-[2.5rem] items-start justify-center px-8 lg:px-24 overflow-hidden">
       <div class="relative z-10 flex flex-col gap-6 max-w-[750px]">
         <h1 class="text-white text-4xl lg:text-7xl font-black leading-[1.1] tracking-tight font-display">
