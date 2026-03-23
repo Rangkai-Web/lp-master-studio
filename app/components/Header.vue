@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed w-full z-50 bg-secondary/95 backdrop-blur-md border-b border-[#181411]/5 dark:border-white/5 px-4 md:px-6 lg:px-20 will-change-transform">
+  <header class="fixed w-full z-50 bg-secondary/95 backdrop-blur-md border-b border-[#181411]/5  px-4 md:px-6 lg:px-20 will-change-transform">
     <div class="max-w-[1440px] mx-auto flex items-center justify-between">
       <!-- Left Navigation (Desktop) -->
       <div class="flex-1 hidden md:flex gap-8 items-center">

@@ -120,7 +120,7 @@
                 <label for="bookingDate" class="text-white/80 text-xs font-bold">Pilih Paket</label>
                 <select 
                   v-model="confirmForm.package"
-                  class="w-full px-4 py-2.5 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  class="w-full px-4 py-2.5 h-10 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Pilih Paket</option>
                   <option value="gabooth-aja">Gabooth Aja</option>

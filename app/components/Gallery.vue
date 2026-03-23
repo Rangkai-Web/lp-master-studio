@@ -42,7 +42,7 @@
             loading="lazy"
             format="webp"
             quality="75"
-            sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            sizes="50vw sm:50vw md:50vw lg:33vw xl:25vw"
             class="portfolio-image"
           />
           <div class="portfolio-overlay">

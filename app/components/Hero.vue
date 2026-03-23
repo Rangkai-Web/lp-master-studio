@@ -28,7 +28,7 @@
         </NuxtLink>
         <NuxtLink 
           to="/#portofolio"
-          class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-8 bg-transparent text-primary text-lg font-black hover:bg-primary/10 hover:scale-110 transition-all duration-300 uppercase border border-primary"
+          class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-16 px-8 bg-[#111]/50 text-primary text-lg font-black hover:bg-primary/10 hover:scale-110 transition-all duration-300 uppercase border border-primary"
         >
           Lihat Portofolio
         </NuxtLink>
@@ -44,7 +44,7 @@ useHead({
     {
       rel: 'preload',
       as: 'image',
-      href: '/img/hero/studio1.webp',
+      href: '/img/hero/studio6.webp',
       type: 'image/webp',
       fetchpriority: 'high'
     }
@@ -56,7 +56,7 @@ useHead({
 .hero-bg {
   background-image: 
     linear-gradient(to right, rgba(19, 20, 21, 0.95) 0%, rgba(19, 20, 21, 0.6) 60%, rgba(19, 20, 21, 0.4) 100%), 
-    url('/img/hero/studio1.webp');
+    url('/img/hero/studio6.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

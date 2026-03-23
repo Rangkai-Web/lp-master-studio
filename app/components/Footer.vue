@@ -102,7 +102,8 @@ const quickLinks = [
   { href: '/#layanan', label: 'Layanan' },
   { href: '/#paket', label: 'Paket Harga' },
   { href: '/#portofolio', label: 'Portfolio' },
-  { href: '/#faq', label: 'Tanya Jawab (FAQ)' }
+  // { href: '/#faq', label: 'Tanya Jawab (FAQ)' },
+  { href: '/karir', label: 'Karir' },
 ]
 </script>
 

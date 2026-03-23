@@ -27,7 +27,7 @@
               loading="lazy"
               format="webp"
               quality="75"
-              sizes="(max-width: 1024px) 100vw, 33vw"
+              sizes="100vw lg:33vw"
             />
           </div>
         </Slide>
@@ -104,8 +104,8 @@ const breakpoints = {
 
 :deep(.carousel__prev:hover),
 :deep(.carousel__next:hover) {
-  background-color: var(--color-secondary, #1a1a1a);
-  transform: scale(1.1);
+  background-color: #2c1714;
+  /* transform: scale(1.1); */
 }
 
 :deep(.carousel__pagination) {
