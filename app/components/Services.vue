@@ -62,7 +62,7 @@
           
           <!-- Modal Content -->
           <div 
-            class="relative bg-secondary rounded-2xl w-full max-w-xl max-h-[80vh] overflow-y-auto border border-neutral-light"
+            class="relative bg-secondary rounded-2xl w-full max-w-3xl max-h-[80vh] overflow-y-auto border border-neutral-light"
             @click.stop
           >
             <!-- Close Button -->
@@ -106,30 +106,36 @@
 
               <!-- Use Cases -->
               <p class="text-neutral-light/70 text-xs italic">
-                Cocok untuk: Prewedding, Wedding, Event, Aftermovie, Dokumenter
+                Cocok untuk: Prewedding, Wedding, Event, Aftermovie, Dokumenter, Graduation
               </p>
 
               <!-- Image -->
-               <div class="flex gap-4 mt-6">
-                 <NuxtImg
-                   src="/img/hero/studio2.webp"
-                   alt="Studio Photography"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-                 <NuxtImg
-                   src="/img/services/drone.webp"
-                   alt="Drone Photography"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-               </div>
+                <Carousel
+                :items-to-show="1"
+                :items-to-scroll="1"
+                :wrap-around="true"
+                :autoplay="5000"
+                :transition="500"
+                :breakpoints="breakpointsPhotography"
+                class="services-carousel"
+              >
+                <Slide v-for="(photography, index) in photoGraphy" :key="index">
+                  <div class="services-card">
+                    <NuxtImg
+                      :src="photography.img"
+                      :alt="`${photography.name} - Master Studio`"
+                      class="w-auto h-[300px] rounded-2xl object-cover object-top"
+                      loading="lazy"
+                      format="webp"
+                    />
+                  </div>
+                </Slide>
+
+                <template #addons>
+                  <Navigation />
+                  <Pagination />
+                </template>
+              </Carousel>
             </div>
 
             <!-- Gallery Booth Content -->
@@ -164,26 +170,26 @@
               </p>
 
               <!-- Image -->
-               <div class="flex gap-4 mt-6">
-                 <NuxtImg
-                   src="/img/services/photo-booth1.webp"
-                   alt="Photo Booth Service"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-                 <NuxtImg
-                   src="/img/services/photo-booth2.webp"
-                   alt="360 Video Booth"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-               </div>
+               <Carousel
+                  :items-to-show="1"
+                  :items-to-scroll="1"
+                  :wrap-around="true"
+                  :autoplay="5000"
+                  :transition="500"
+                  :breakpoints="breakpointsPhotobooth"
+                  class="services-carousel"
+                >
+                  <Slide v-for="(photobooth, index) in photoBooth" :key="index">
+                    <div class="services-card">
+                      <video :src="photobooth.vid" controls class="w-full h-auto rounded-xl"></video>
+                    </div>
+                  </Slide>
+
+                  <template #addons>
+                    <Navigation />
+                    <Pagination />
+                  </template>
+                </Carousel>
             </div>
 
             <!-- Photo Collage Content -->
@@ -221,26 +227,32 @@
               </p>
 
               <!-- Image -->
-               <div class="flex gap-4 mt-6">
-                 <NuxtImg
-                   src="/img/services/photo-collage1.webp"
-                   alt="Wedding Album Design"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-                 <NuxtImg
-                   src="/img/services/photo-collage2.webp"
-                   alt="Premium Photo Printing"
-                   class="w-1/2 h-[200px] rounded-2xl object-cover"
-                   loading="lazy"
-                   format="webp"
-                   :width="300"
-                   :height="200"
-                 />
-               </div>
+               <Carousel
+                  :items-to-show="1"
+                  :items-to-scroll="1"
+                  :wrap-around="true"
+                  :autoplay="5000"
+                  :transition="500"
+                  :breakpoints="breakpointsPortraitCollage"
+                  class="services-carousel"
+                >
+                  <Slide v-for="(portrait, index) in portraitCollage" :key="index">
+                    <div class="services-card">
+                      <NuxtImg
+                        :src="portrait.img"
+                        :alt="`${portrait.name} - Master Studio`"
+                        class="w-auto h-[300px] rounded-2xl object-cover object-top"
+                        loading="lazy"
+                        format="webp"
+                      />
+                    </div>
+                  </Slide>
+
+                  <template #addons>
+                    <Navigation />
+                    <Pagination />
+                  </template>
+                </Carousel>
             </div>
           </div>
         </div>
@@ -299,11 +311,76 @@ onMounted(() => {
     document.body.style.overflow = ''
   })
 })
+
+const portraitCollage = [
+  {
+    img: '/img/services/photo-collage/cal1.webp',
+    name: 'Calendar 1',
+  },
+  {
+    img: '/img/services/photo-collage/cal2.webp',
+    name: 'Calendar 2',
+  },
+  {
+    img: '/img/services/photo-collage/cal3.webp',
+    name: 'Calendar 3',
+  }
+];
+
+const photoBooth = [
+  {
+    vid: '/img/services/photobooth/vid1.mp4'
+  },
+  {
+    vid: '/img/services/photobooth/vid2.mp4'
+  },
+  {
+    vid: '/img/services/photobooth/vid3.mp4'
+  }
+];
+
+const photoGraphy = [
+  {
+    img: '/img/services/photography/graduation3.webp',
+    name: 'Photography 3',
+  },
+  {
+    img: '/img/services/photography/graduation4.webp',
+    name: 'Photography 4',
+  },
+  {
+    img: '/img/services/photography/wedding2.webp',
+    name: 'Wedding 2',
+  },
+  {
+    img: '/img/services/photography/wedding3.webp',
+    name: 'Wedding 3',
+  },
+];
+
+const breakpointsPortraitCollage = {
+  1024: {
+    itemsToShow: 1,
+    itemsToScroll: 1,
+  },
+}
+
+const breakpointsPhotobooth = {
+  1024: {
+    itemsToShow: 2,
+    itemsToScroll: 1,
+  },
+}
+
+const breakpointsPhotography = {
+  1024: {
+    itemsToShow: 3,
+    itemsToScroll: 1,
+  },
+}
 </script>
 
 <style scoped>
-
-
 .modal-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -320,5 +397,52 @@ onMounted(() => {
 .modal-enter-from .relative,
 .modal-leave-to .relative {
   transform: scale(0.95);
+}
+
+.services-carousel {
+  padding: 2rem 0;
+}
+
+.services-card {
+  padding: 1rem;
+}
+
+:deep(.carousel__prev),
+:deep(.carousel__next) {
+  background-color: var(--color-primary, #dc2626);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+:deep(.carousel__prev:hover),
+:deep(.carousel__next:hover) {
+  background-color: #2c1714;
+  /* transform: scale(1.1); */
+}
+
+:deep(.carousel__pagination) {
+  margin-top: 1.5rem;
+}
+
+:deep(.carousel__pagination-button) {
+  background-color: var(--color-primary, #dc2626);
+  opacity: 0.3;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  transition: all 0.3s;
+}
+
+:deep(.carousel__pagination-button--active) {
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
 }
 </style>

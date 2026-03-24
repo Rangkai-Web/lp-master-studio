@@ -127,7 +127,7 @@ const { activeFilter, paginatedItems, hasMore, remainingCount, loadMore, setFilt
 const filters = [
   { value: 'all' as const, label: 'Semua' },
   { value: 'wedding' as const, label: 'Wedding' },
-  { value: 'company' as const, label: 'Company' },
+  { value: 'calendar' as const, label: 'Calendar' },
   { value: 'graduation' as const, label: 'Graduation' },
   { value: 'event' as const, label: 'Event' },
 ]
@@ -179,8 +179,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-
-
 /* Portfolio Grid - Responsive */
 .portfolio-grid {
   display: grid;

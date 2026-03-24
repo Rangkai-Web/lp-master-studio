@@ -21,8 +21,8 @@
           <div class="testimonial-card">
             <NuxtImg
               :src="testimonial.img"
-              :alt="`Testimonial dari ${testimonial.name} - Master Studio`"
-              class="w-full max-w-md h-auto object-contain rounded-md"
+              :alt="`${testimonial.name} - Master Studio`"
+              class="w-full max-w-md h-fit object-contain rounded-md p-6"
               draggable="false"
               loading="lazy"
               format="webp"
@@ -45,15 +45,15 @@
 const testimonials = [
   {
     img: '/img/testimoni/testimoni1.webp',
-    name: 'Kak Ketty',
+    name: 'Testimoni 1',
   },
   {
     img: '/img/testimoni/testimoni2.webp',
-    name: 'Kak Tia',
+    name: 'Testimoni 2',
   },
   {
     img: '/img/testimoni/testimoni3.webp',
-    name: 'Diah Qudsiyah',
+    name: 'Testimoni 3',
   },
 ]
 
@@ -80,7 +80,7 @@ const breakpoints = {
   border-bottom: 8px solid;
   border-color: var(--color-primary, #dc2626);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 
 @media (min-width: 768px) {

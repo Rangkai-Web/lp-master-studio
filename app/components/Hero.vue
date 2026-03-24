@@ -1,6 +1,20 @@
 <template>
   <section class="px-4 lg:px-20 py-8 lg:py-12 mt-20" id="hero">
-    <div class="hero-bg relative flex min-h-[620px] flex-col gap-6 rounded-[2.5rem] items-start justify-center px-8 lg:px-24 overflow-hidden">
+    <div class="relative flex min-h-[620px] flex-col gap-6 rounded-[2.5rem] items-start justify-center px-8 lg:px-24 overflow-hidden shadow-2xl">
+      <!-- Background Image using NuxtImg for better LCP -->
+      <NuxtImg
+        src="/img/hero/studio6.webp"
+        alt="Studio Background"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+        format="webp"
+        quality="80"
+      />
+      <!-- Overlay Gradient -->
+      <div class="absolute inset-0 bg-linear-to-r from-secondary/95 via-secondary/70 to-secondary/40"></div>
+
+      <!-- Content -->
       <div class="relative z-10 flex flex-col gap-6 max-w-[750px]">
         <h1 class="text-white text-4xl lg:text-7xl font-black leading-[1.1] tracking-tight font-display">
           Foto Studio & Video <br /><span class="text-primary italic">Profesional</span>
@@ -38,27 +52,7 @@
 </template>
 
 <script setup lang="ts">
-// Preload hero image for faster LCP
-useHead({
-  link: [
-    {
-      rel: 'preload',
-      as: 'image',
-      href: '/img/hero/studio6.webp',
-      type: 'image/webp',
-      fetchpriority: 'high'
-    }
-  ]
-})
 </script>
 
 <style scoped>
-.hero-bg {
-  background-image: 
-    linear-gradient(to right, rgba(19, 20, 21, 0.95) 0%, rgba(19, 20, 21, 0.6) 60%, rgba(19, 20, 21, 0.4) 100%), 
-    url('/img/hero/studio6.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 </style>

@@ -12,6 +12,13 @@
           <div class="flex items-baseline gap-1 mb-8">
             <span class="text-4xl font-black text-primary">{{ item.price }}</span>
           </div>
+          <NuxtImg
+            :src="item.img"
+            :alt="item.name"
+            class="w-full h-[200px] rounded-2xl object-cover mb-8 hover:scale-105 transition-all duration-300"
+            loading="lazy"
+            format="webp"
+          />
           <ul class="flex flex-col gap-5 mb-10 text-sm">
             <li v-for="(feature, index) in item.features" :key="index" class="flex items-center gap-3">
               <Icon name="material-symbols:check" class="text-primary" />
@@ -19,7 +26,7 @@
             </li>
           </ul>
           <NuxtLink 
-            :to="`/reservasi?package=${item.name}`"
+            :to="`/reservasi?package=${item.package}`"
             :class="[
               'w-full py-4 rounded-xl border-2 border-white/10 text-white font-black hover:bg-primary hover:border-primary transition-all uppercase text-center',
               index === 1 ? 'bg-primary' : ''
@@ -39,6 +46,7 @@ const listPaket = [
   {
     name: "Gabooth Aja",
     price: "Rp 1.500K",
+    img: '/img/hero/studio1.webp',
     description: "Cocok untuk kamu yang ingin foto sendiri atau berdua.",
     features: [
       "Photobooth Session",
@@ -51,10 +59,12 @@ const listPaket = [
       "Get Soft File",
       "Get GIF Photos",
     ],
+    package: 'photo-studio'
   },
   {
     name: "Gabooth Banget",
     price: "Rp 3.000K",
+    img: '/img/services/photo-booth1.webp',
     description: "Sempurna untuk mengabadikan momen kebersamaan.",
     features: [
       "Photobooth dan Videobooth 360 Session",
@@ -69,10 +79,12 @@ const listPaket = [
       "Get Album for Photos",
       "Get Keychain for Souvenir",
     ],
+    package: 'photobooth'
   },
   {
     name: "Gabooth Parah",
     price: "Rp 2.500K",
+    img: '/img/services/photo-collage1.webp',
     description: "Menikmati sesi foto lebih lama dan lebih banyak",
     features: [
       "Photobooth Session",
@@ -85,6 +97,7 @@ const listPaket = [
       "Get Soft File",
       "Get GIF Photos",
     ],
+    package: 'photobox'
   },
 ];
 </script>

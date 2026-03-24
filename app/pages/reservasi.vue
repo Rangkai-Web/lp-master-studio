@@ -72,7 +72,7 @@
           
           <!-- Google Calendar Appointment Scheduling begin -->
           <iframe
-            src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2VD4wMfbp3vD2dCm2PABg14ucMOEnMAmUVICPMrF9GJ2YeBmsN2tyvqCVdorvhNHwJxJPwQVwT?gv=true"
+            :src="calendarUrl"
             style="border: 0"
             width="100%"
             height="600"
@@ -123,9 +123,17 @@
                   class="w-full px-4 py-2.5 h-10 rounded-3xl text-sm bg-white text-gray-800 ring-1 ring-gray-200 focus:outline-none focus:ring-2 focus:ring-white/50"
                 >
                   <option value="">Pilih Paket</option>
-                  <option value="gabooth-aja">Gabooth Aja</option>
-                  <option value="gabooth-banget">Gabooth Banget</option>
-                  <option value="gabooth-parah">Gabooth Parah</option>
+                  <option value="self-photo">Self Photo</option>
+                  <option value="photobox">Photobox</option>
+                  <option value="photobooth">Photobooth</option>
+                  <option value="self-train-theme">Self Train Theme</option>
+                  <option value="self-elevator-box">Self Elevator Box</option>
+                  <option value="photo-studio">Photo Studio</option>
+                  <option value="photo-group">Photo Group</option>
+                  <option value="prewedding">Prewedding</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="engagement">Engagement</option>
+                  <option value="coverage-photo">Coverage Photo</option>
                 </select>
               </div>
             </div>
@@ -169,7 +177,7 @@ useHead({
 })
 
 const isLoading = ref(true)
-const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3DY8gWnejREjq4e4yGAbMZuHK3E1BvBfb51M5Sc-FPtVvifB1VfXc7NtDQW9RTJrDduFC34T-a?gv=true'
+const calendarUrl = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2VD4wMfbp3vD2dCm2PABg14ucMOEnMAmUVICPMrF9GJ2YeBmsN2tyvqCVdorvhNHwJxJPwQVwT?gv=true'
 
 const confirmForm = reactive({
   name: '',
@@ -179,7 +187,7 @@ const confirmForm = reactive({
 
 onMounted(() => {
   if (packagePhoto) {
-    confirmForm.package = packagePhoto == 'Gabooth Aja' ? 'gabooth-aja' : packagePhoto == 'Gabooth Banget' ? 'gabooth-banget' : 'gabooth-parah'
+    confirmForm.package = packagePhoto == 'photo-studio' ? 'photo-studio' : packagePhoto == 'photobooth' ? 'photobooth' : 'photobox'
   }
 })
 

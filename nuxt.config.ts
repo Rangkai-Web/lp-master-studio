@@ -61,8 +61,6 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, prewedding, dan creative agency terpercaya sejak 2011.' },
         { name: 'keywords', content: 'studio foto cikampek, studio foto karawang, jasa foto wedding, foto wisuda, video cinematic, prewedding, fotografi produk, master studio' },
         { name: 'author', content: 'Master Studio' },
-        { name: 'robots', content: 'index, follow' },
-        { name: 'googlebot', content: 'index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1' },
         { name: 'theme-color', content: '#E1242B' },
         { name: 'msapplication-TileColor', content: '#E1242B' },
         { name: 'geo.region', content: 'ID-JB' },
@@ -79,8 +77,10 @@ export default defineNuxtConfig({
         // Preconnect for external resources
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'preconnect', href: 'https://res.cloudinary.com' },
         // DNS Prefetch
         { rel: 'dns-prefetch', href: 'https://www.google.com' },
+        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
         { rel: 'dns-prefetch', href: 'https://maps.googleapis.com' }
       ]
     } as any
@@ -90,7 +90,8 @@ export default defineNuxtConfig({
     url: 'https://masterstudio.id',
     name: 'Master Studio',
     description: 'Studio foto dan video profesional terbaik di Cikampek, Karawang. Layanan fotografi produk, video cinematic, wisuda, wedding, prewedding, dan creative agency terpercaya sejak 2011.',
-    defaultLocale: 'id'
+    defaultLocale: 'id',
+    indexable: true
   },
 
   // SEO Module Configuration
