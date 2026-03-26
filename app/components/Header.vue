@@ -4,13 +4,14 @@
       <!-- Left Navigation (Desktop) -->
       <div class="flex-1 hidden md:flex gap-8 items-center">
         <nav class="flex gap-8 text-sm font-medium tracking-wide uppercase">
-          <template v-for="link in navLinksLeft" :key="link.href">
-            <NuxtLink 
-              :to="link.href" 
+          <template v-for="link in navLinksLeft" :key="link.label">
+            <button
+              v-if="link.type === 'section'"
+              @click="scrollToSection(link.id)"
               class="navigation-link transition-colors"
             >
               {{ link.label }}
-            </NuxtLink>
+            </button>
           </template>
         </nav>
       </div>
@@ -44,13 +45,22 @@
       <!-- Right Navigation (Desktop) -->
       <div class="flex-1 hidden md:flex justify-end items-center gap-8">
         <nav class="flex gap-8 text-sm font-medium tracking-wide uppercase">
-          <template v-for="link in navLinksRight" :key="link.href">
-            <NuxtLink 
-              :to="link.href" 
+          <template v-for="link in navLinksRight" :key="link.label">
+            <NuxtLink
+              v-if="link.type === 'route'"
+              :to="link.href"
               class="navigation-link transition-colors"
             >
               {{ link.label }}
             </NuxtLink>
+
+            <button
+              v-else
+              @click="scrollToSection(link.id)"
+              class="navigation-link transition-colors"
+            >
+              {{ link.label }}
+            </button>
           </template>
         </nav>
         <NuxtLink 
@@ -75,16 +85,25 @@
         v-if="isMenuOpen"
         class="md:hidden absolute top-full left-0 right-0 border-b border-[#181411]/5 p-6 bg-secondary/95 backdrop-blur-lg shadow-md shadow-secondary/60"
       >
-        <nav class="flex flex-col gap-4 mb-6">
-          <NuxtLink 
-            v-for="link in allNavLinks" 
-            :key="link.href"
-            :to="link.href" 
-            class="text-base font-medium tracking-wide uppercase navigation-link transition-colors py-2"
-            @click="isMenuOpen = false"
-          >
-            {{ link.label }}
-          </NuxtLink>
+        <nav class="flex flex-col justify-baseline gap-4 mb-6">
+          <template v-for="link in allNavLinks" :key="link.label">
+            <NuxtLink
+              v-if="link.type === 'route'"
+              :to="link.href"
+              @click="isMenuOpen = false"
+              class="navigation-link transition-colors"
+            >
+              {{ link.label }}
+            </NuxtLink>
+
+            <button
+              v-else
+              @click="() => { scrollToSection(link.id); isMenuOpen = false }"
+              class="navigation-link transition-colors text-left"
+            >
+              {{ link.label }}
+            </button>
+          </template>
         </nav>
         <NuxtLink 
           to="/reservasi"
@@ -101,24 +120,62 @@
 <script setup lang="ts">
 const isMenuOpen = ref(false)
 
-const navLinksLeft = [
-  { href: '/#tentang', label: 'Tentang' },
-  { href: '/#alur-kerja', label: 'Alur Kerja' },
-  { href: '/#layanan', label: 'Layanan' },
+type NavLink =
+  | { type: 'section'; id: string; label: string }
+  | { type: 'route'; href: string; label: string }
+
+const navLinksLeft: NavLink[] = [
+  { type: 'section', id: 'tentang', label: 'Tentang' },
+  { type: 'section', id: 'alur-kerja', label: 'Alur Kerja' },
+  { type: 'section', id: 'layanan', label: 'Layanan' },
 ]
 
-const navLinksRight = [
-  { href: '/#paket', label: 'Paket' },
-  { href: '/portfolio', label: 'Portofolio' }
+const navLinksRight: NavLink[] = [
+  { type: 'section', id: 'paket', label: 'Paket' },
+  { type: 'route', href: '/portfolio', label: 'Portofolio' }
 ]
 
 const allNavLinks = [...navLinksLeft, ...navLinksRight]
+
+const route = useRoute()
+const router = useRouter()
+
+const scrollToSection = async (id: string) => {
+  // kalau bukan di halaman home
+  if (route.path !== '/') {
+    await router.push('/') // pindah ke home dulu
+
+    // tunggu DOM ready
+    await nextTick()
+
+    // kasih delay biar aman (hydration + render)
+    setTimeout(() => {
+      scrollTo(id)
+    }, 100)
+
+    return
+  }
+
+  scrollTo(id)
+}
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id)
+  if (el) {
+    const yOffset = -100
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
+}
 </script>
 
 <style scoped>
 .navigation-link {
   position: relative;
   transition: color 0.3s;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .navigation-link::after {

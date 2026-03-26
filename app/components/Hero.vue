@@ -57,7 +57,7 @@
                   Reservasi Jadwal
                 </NuxtLink>
                 <NuxtLink 
-                  to="/#portofolio"
+                  to="/portfolio"
                   class="flex min-w-[220px] cursor-pointer items-center justify-center rounded-full h-14 md:h-16 px-8 bg-[#111]/50 text-white md:text-primary text-lg font-black hover:bg-primary/10 hover:scale-110 transition-all duration-300 uppercase border border-white/20 md:border-primary"
                 >
                   Lihat Portofolio
@@ -82,10 +82,13 @@ const heroImages = [
     img: '/img/hero/studio6.webp'
   },
   {
-    img: '/img/gallery/gallery-booth/self-photo/self-photo27.webp'
+    img: '/img/gallery/master-studio/photo-studio/photostudio17.webp'
   },
   {
     img: '/img/gallery/portrait-collage/photobox/photobox19.webp'
+  },
+  {
+    img: '/img/gallery/gallery-booth/self-photo/self-photo27.webp'
   },
 ];
 

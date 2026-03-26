@@ -34,8 +34,21 @@
       <div>
         <h4 class="font-black text-lg mb-8 uppercase tracking-widest border-b border-primary w-fit pr-4 font-display">Quick Links</h4>
         <ul class="flex flex-col gap-5 text-neutral-light text-sm">
-          <li v-for="link in quickLinks" :key="link.href">
-            <NuxtLink :to="link.href" class="hover:text-primary transition-colors">{{ link.label }}</NuxtLink>
+          <li v-for="link in quickLinks" :key="link.label">
+            <NuxtLink 
+              v-if="link.type === 'route'" 
+              :to="link.href" 
+              class="hover:text-primary transition-colors"
+            >
+              {{ link.label }}
+            </NuxtLink>
+            <button 
+              v-else 
+              @click="scrollToSection(link.id)" 
+              class="hover:text-primary transition-colors text-left"
+            >
+              {{ link.label }}
+            </button>
           </li>
         </ul>
       </div>
@@ -96,17 +109,40 @@ const services = [
   { label: 'Portrait Collage' },
 ]
 
-const quickLinks = [
-  { href: '/#tentang', label: 'Tentang' },
-  { href: '/#alur-kerja', label: 'Alur Kerja' },
-  { href: '/#layanan', label: 'Layanan' },
-  { href: '/#paket', label: 'Paket Harga' },
-  { href: '/portfolio', label: 'Portfolio' },
-  // { href: '/#faq', label: 'Tanya Jawab (FAQ)' },
-  { href: '/karir', label: 'Karir' },
+type NavLink =
+  | { type: 'section'; id: string; label: string }
+  | { type: 'route'; href: string; label: string }
+
+const quickLinks: NavLink[] = [
+  { type: 'section', id: 'tentang', label: 'Tentang' },
+  { type: 'section', id: 'alur-kerja', label: 'Alur Kerja' },
+  { type: 'section', id: 'layanan', label: 'Layanan' },
+  { type: 'section', id: 'paket', label: 'Paket Harga' },
+  { type: 'route', href: '/portfolio', label: 'Portfolio' },
+  { type: 'route', href: '/karir', label: 'Karir' },
 ]
+
+const route = useRoute()
+const router = useRouter()
+
+const scrollToSection = async (id: string) => {
+  if (route.path !== '/') {
+    await router.push('/')
+    await nextTick()
+    setTimeout(() => {
+      scrollTo(id)
+    }, 100)
+    return
+  }
+  scrollTo(id)
+}
+
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id)
+  if (el) {
+    const yOffset = -100
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
+}
 </script>
-
-<style scoped>
-
-</style>
