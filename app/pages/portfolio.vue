@@ -193,6 +193,17 @@ onMounted(() => {
     if (e.key === 'ArrowRight') navigateLightbox(1)
   })
 })
+
+useSeoMeta({
+  title: 'Portofolio - Master Studio',
+  description: 'Kumpulan karya terbaik Master Studio dari berbagai kategori photography dan videography.',
+  ogTitle: 'Portofolio - Master Studio',
+  ogDescription: 'Kumpulan karya terbaik Master Studio dari berbagai kategori photography dan videography.',
+  ogImage: '/img/hero/studio1.webp',
+  ogUrl: 'https://masterstudio.id/portfolio',
+  ogType: 'website',
+  robots: 'index, follow',
+})
 </script>
 
 <style scoped>
