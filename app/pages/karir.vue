@@ -316,7 +316,7 @@ const jobOpenings = [
     ]
   },
   {
-    title: 'Vidiographer',
+    title: 'Videographer',
     icon: '🎥',
     type: 'Fulltime',
     location: 'On-site',

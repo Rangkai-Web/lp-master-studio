@@ -59,7 +59,7 @@
           class="px-8 py-3 rounded-full border border-white/30 text-white font-bold uppercase tracking-widest text-sm hover:bg-white/10 transition-all duration-300 flex items-center gap-3"
           aria-label="Muat lebih banyak gambar portfolio"
         >
-          <span>Lihat Lebih Banyak</span>
+          <span>Show More</span>
           <span class="text-primary">({{ remainingCount }})</span>
           <Icon name="material-symbols:expand-more" class="text-xl" aria-hidden="true" />
         </button>
@@ -122,14 +122,15 @@
 <script setup lang="ts">
 import type { GalleryItem } from '~/composables/useGallery'
 
-const { activeFilter, paginatedItems, hasMore, remainingCount, loadMore, setFilter } = usePortfolio()
+const { activeFilter, paginatedItems, hasMore, remainingCount, loadMore, setFilter } = useGallery()
 
 const filters = [
-  { value: 'all' as const, label: 'Semua' },
+  // { value: 'all' as const, label: 'Semua' },
+  { value: 'photostudio' as const, label: 'Photo Studio' },
+  { value: 'photobooth' as const, label: 'Photo Booth' },
   { value: 'wedding' as const, label: 'Wedding' },
-  { value: 'calendar' as const, label: 'Calendar' },
+  { value: 'engagement' as const, label: 'Engagement' },
   { value: 'graduation' as const, label: 'Graduation' },
-  { value: 'event' as const, label: 'Event' },
 ]
 
 const selectedImage = ref<GalleryItem | null>(null)

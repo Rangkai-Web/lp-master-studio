@@ -15,7 +15,7 @@
           <NuxtImg
             :src="item.img"
             :alt="item.name"
-            class="w-full h-[200px] rounded-2xl object-cover mb-8 hover:scale-105 transition-all duration-300"
+            class="w-full h-[200px] rounded-2xl object-cover object-top mb-8 hover:scale-105 transition-all duration-300"
             loading="lazy"
             format="webp"
           />
@@ -46,7 +46,7 @@ const listPaket = [
   {
     name: "Gabooth Aja",
     price: "Rp 1.500K",
-    img: '/img/hero/studio1.webp',
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth9.webp',
     description: "Cocok untuk kamu yang ingin foto sendiri atau berdua.",
     features: [
       "Photobooth Session",
@@ -59,12 +59,12 @@ const listPaket = [
       "Get Soft File",
       "Get GIF Photos",
     ],
-    package: 'photo-studio'
+    package: 'photobooth'
   },
   {
     name: "Gabooth Banget",
     price: "Rp 3.000K",
-    img: '/img/services/photo-booth1.webp',
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth10.webp',
     description: "Sempurna untuk mengabadikan momen kebersamaan.",
     features: [
       "Photobooth dan Videobooth 360 Session",
@@ -84,7 +84,7 @@ const listPaket = [
   {
     name: "Gabooth Parah",
     price: "Rp 2.500K",
-    img: '/img/services/photo-collage1.webp',
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth11.webp',
     description: "Menikmati sesi foto lebih lama dan lebih banyak",
     features: [
       "Photobooth Session",
@@ -97,7 +97,7 @@ const listPaket = [
       "Get Soft File",
       "Get GIF Photos",
     ],
-    package: 'photobox'
+    package: 'photobooth'
   },
 ];
 </script>

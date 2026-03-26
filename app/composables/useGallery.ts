@@ -1,40 +1,40 @@
 export interface GalleryItem {
   id: number
-  cat: 'wedding' | 'calendar' | 'graduation' | 'event' | 'family' | 'personal'
+  cat: 'photostudio' | 'photobooth' | 'wedding' | 'engagement' | 'graduation'
   img: string
-  class: 'tall' | 'wide' | ''
 }
 
 export const galleryItems: GalleryItem[] = [
-  { id: 1, cat: 'wedding', img: '/img/services/photography/wedding1.webp', class: 'tall' },
-  { id: 2, cat: 'wedding', img: '/img/services/photography/wedding2.webp', class: '' },
-  { id: 3, cat: 'wedding', img: '/img/services/photography/wedding3.webp', class: 'wide' },
-  { id: 4, cat: 'wedding', img: '/img/services/photography/wedding4.webp', class: 'tall' },
-  { id: 5, cat: 'wedding', img: '/img/services/photography/wedding5.webp', class: 'tall' },
-  { id: 6, cat: 'wedding', img: '/img/services/photography/wedding6.webp', class: '' },
-  { id: 7, cat: 'wedding', img: '/img/services/photography/wedding7.webp', class: 'wide' },
-  { id: 8, cat: 'wedding', img: '/img/services/photography/wedding8.webp', class: 'tall' },
-  { id: 9, cat: 'wedding', img: '/img/services/photography/wedding9.webp', class: 'tall' },
-  { id: 10, cat: 'wedding', img: '/img/services/photography/wedding10.webp', class: '' },
-  { id: 11, cat: 'calendar', img: '/img/services/photo-collage/cal1.webp', class: '' },
-  { id: 12, cat: 'calendar', img: '/img/services/photo-collage/cal2.webp', class: '' },
-  { id: 13, cat: 'calendar', img: '/img/services/photo-collage/cal3.webp', class: '' },
-  { id: 14, cat: 'graduation', img: '/img/services/photography/graduation1.webp', class: '' },
-  { id: 15, cat: 'graduation', img: '/img/services/photography/graduation2.webp', class: 'wide' },
-  { id: 16, cat: 'graduation', img: '/img/services/photography/graduation3.webp', class: 'wide' },
-  { id: 17, cat: 'graduation', img: '/img/services/photography/graduation4.webp', class: 'wide' },
-  { id: 18, cat: 'event', img: '/img/gallery/event1.webp', class: 'wide' },
-  { id: 19, cat: 'event', img: '/img/gallery/event2.webp', class: 'tall' },
+  { id: 1, cat: 'photostudio', img: '/img/gallery/master-studio/photo-studio/photostudio2.webp' },
+  { id: 2, cat: 'photostudio', img: '/img/gallery/master-studio/photo-studio/photostudio9.webp' },
+  { id: 3, cat: 'photostudio', img: '/img/gallery/master-studio/photo-studio/photostudio13.webp' },
+  { id: 4, cat: 'photostudio', img: '/img/gallery/master-studio/photo-studio/photostudio17.webp' },
+  { id: 5, cat: 'photobooth', img: '/img/gallery/gallery-booth/photobooth/gallery-booth1.webp' },
+  { id: 6, cat: 'photobooth', img: '/img/gallery/gallery-booth/photobooth/gallery-booth2.webp' },
+  { id: 7, cat: 'photobooth', img: '/img/gallery/gallery-booth/photobooth/gallery-booth3.webp' },
+  { id: 8, cat: 'photobooth', img: '/img/gallery/gallery-booth/photobooth/gallery-booth4.webp' },
+  { id: 9, cat: 'wedding', img: '/img/gallery/master-studio/wedding/wedding1.webp' },
+  { id: 10, cat: 'wedding', img: '/img/gallery/master-studio/wedding/wedding10.webp' },
+  { id: 11, cat: 'wedding', img: '/img/gallery/master-studio/wedding/wedding12.webp' },
+  { id: 12, cat: 'wedding', img: '/img/gallery/master-studio/wedding/wedding7.webp' },
+  { id: 13, cat: 'engagement', img: '/img/gallery/master-studio/engagement/engagement1.webp' },
+  { id: 14, cat: 'engagement', img: '/img/gallery/master-studio/engagement/engagement3.webp' },
+  { id: 15, cat: 'engagement', img: '/img/gallery/master-studio/engagement/engagement8.webp' },
+  { id: 16, cat: 'engagement', img: '/img/gallery/master-studio/engagement/engagement17.webp' },
+  { id: 17, cat: 'graduation', img: '/img/gallery/master-studio/graduation/graduation2.webp' },
+  { id: 18, cat: 'graduation', img: '/img/gallery/master-studio/graduation/graduation3.webp' },
+  { id: 19, cat: 'graduation', img: '/img/gallery/master-studio/graduation/graduation9.webp' },
+  { id: 20, cat: 'graduation', img: '/img/gallery/master-studio/graduation/graduation16.webp' },
 ]
 
 const ITEMS_PER_PAGE = 8
 
-export const usePortfolio = () => {
-  const activeFilter = ref<'all' | 'wedding' | 'calendar' | 'graduation' | 'event' | 'family' | 'personal'>('all')
+export const useGallery = () => {
+  const activeFilter = ref<'photostudio' | 'photobooth' | 'wedding' | 'engagement' | 'graduation'>('photostudio')
   const displayedCount = ref(ITEMS_PER_PAGE)
 
   const filteredItems = computed(() => {
-    if (activeFilter.value === 'all') {
+    if (activeFilter.value === 'photostudio') {
       return galleryItems
     }
     return galleryItems.filter(item => item.cat === activeFilter.value)
@@ -75,4 +75,3 @@ export const usePortfolio = () => {
     setFilter,
   }
 }
-

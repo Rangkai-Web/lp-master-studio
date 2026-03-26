@@ -181,7 +181,18 @@
                 >
                   <Slide v-for="(photobooth, index) in photoBooth" :key="index">
                     <div class="services-card">
-                      <video :src="photobooth.vid" controls class="w-full h-auto rounded-xl"></video>
+                      <template v-if="photobooth.vid">
+                        <video :src="photobooth.vid" controls class="w-full h-auto rounded-xl"></video>
+                      </template>
+                      <template v-else>
+                        <NuxtImg
+                          :src="photobooth.img"
+                          alt="Gallery Booth"
+                          class="w-full h-auto rounded-xl"
+                          loading="lazy"
+                          format="webp"
+                        />
+                      </template>
                     </div>
                   </Slide>
 
@@ -312,55 +323,89 @@ onMounted(() => {
   })
 })
 
-const portraitCollage = [
+const photoGraphy = [
   {
-    img: '/img/services/photo-collage/cal1.webp',
-    name: 'Calendar 1',
+    img: '/img/gallery/master-studio/photo-studio/photostudio2.webp',
+    name: '1',
   },
   {
-    img: '/img/services/photo-collage/cal2.webp',
-    name: 'Calendar 2',
+    img: '/img/gallery/master-studio/graduation/graduation3.webp',
+    name: '2',
   },
   {
-    img: '/img/services/photo-collage/cal3.webp',
-    name: 'Calendar 3',
-  }
+    img: '/img/gallery/master-studio/wedding/wedding13.webp',
+    name: '3',
+  },
+  {
+    img: '/img/gallery/master-studio/prewedding/prewedding7.webp',
+    name: '4',
+  },
+  {
+    img: '/img/gallery/master-studio/maternity/maternity1.webp',
+    name: '5',
+  },
 ];
 
 const photoBooth = [
   {
-    vid: '/img/services/photobooth/vid1.mp4'
+    vid: '/img/gallery/gallery-booth/videobooth/vid1.mp4'
   },
   {
-    vid: '/img/services/photobooth/vid2.mp4'
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth1.webp'
   },
   {
-    vid: '/img/services/photobooth/vid3.mp4'
-  }
+    img: '/img/gallery/event/event1.webp'
+  },
+  {
+    vid: '/img/gallery/gallery-booth/videobooth/vid2.mp4'
+  },
+  {
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth2.webp'
+  },
+  {
+    img: '/img/gallery/event/event4.webp'
+  },
+  {
+    vid: '/img/gallery/gallery-booth/videobooth/vid3.mp4'
+  },
+  {
+    img: '/img/gallery/gallery-booth/photobooth/gallery-booth6.webp'
+  },
+  {
+    img: '/img/gallery/event/event13.webp'
+  },
 ];
 
-const photoGraphy = [
+const portraitCollage = [
   {
-    img: '/img/services/photography/graduation3.webp',
-    name: 'Photography 3',
+    img: '/img/gallery/portrait-collage/collage/collage7.webp',
+    name: '1',
   },
   {
-    img: '/img/services/photography/graduation4.webp',
-    name: 'Photography 4',
+    img: '/img/gallery/portrait-collage/glasswood/glasswood4.webp',
+    name: '2',
   },
   {
-    img: '/img/services/photography/wedding2.webp',
-    name: 'Wedding 2',
+    img: '/img/gallery/portrait-collage/photobox/photobox8.webp',
+    name: '3',
   },
   {
-    img: '/img/services/photography/wedding3.webp',
-    name: 'Wedding 3',
+    img: '/img/gallery/portrait-collage/yearbook/yearbook3.webp',
+    name: '4',
+  },
+  {
+    img: '/img/gallery/gallery-booth/self-photo/self-photo24.webp',
+    name: '5',
+  },
+  {
+    img: '/img/gallery/master-studio/calendar/calendar4.webp',
+    name: '6',
   },
 ];
 
 const breakpointsPortraitCollage = {
   1024: {
-    itemsToShow: 1,
+    itemsToShow: 2,
     itemsToScroll: 1,
   },
 }

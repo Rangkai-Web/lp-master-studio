@@ -187,7 +187,7 @@ const confirmForm = reactive({
 
 onMounted(() => {
   if (packagePhoto) {
-    confirmForm.package = packagePhoto == 'photo-studio' ? 'photo-studio' : packagePhoto == 'photobooth' ? 'photobooth' : 'photobox'
+    confirmForm.package = packagePhoto
   }
 })
 

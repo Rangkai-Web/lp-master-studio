@@ -109,7 +109,7 @@ const navLinksLeft = [
 
 const navLinksRight = [
   { href: '/#paket', label: 'Paket' },
-  { href: '/#portofolio', label: 'Portofolio' }
+  { href: '/portfolio', label: 'Portofolio' }
 ]
 
 const allNavLinks = [...navLinksLeft, ...navLinksRight]
