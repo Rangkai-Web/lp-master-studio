@@ -5,7 +5,7 @@
     <LazyServices />
     <LazyWorkFlow />
     <LazyPricing />
-    <LazyGallery />
+    <!-- <LazyGallery /> -->
     <LazyWhyUs />
     <LazyTestimoni />
     <LazyLocation />
